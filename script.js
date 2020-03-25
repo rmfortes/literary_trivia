@@ -1,35 +1,45 @@
 // an object literal will store the trivia questions and their answers. 
-
 const triviaQuestions = [
     {
         question: "Which great American novel was a tremendous failure upon its publication? School curricula sparked renewed interest in it around WWII and today, it is its publishing house's most popular title.",
         answers: {
-            a: ,
-            b: greatgatsby.jpg,
-            c: "Frankenstein",
-            d: "Fahrenheit 451"
+            a: {
+                title: "Where the Red Fern Grows",
+                url: './images/wheretheredferngrows.jpg'
+            },
+            b: {
+                title: "The Great Gatsby",
+                url: './images/greatgatsby.jpg'
+            },
+            c: {
+                title: "Frankenstein",
+                url: './images/frankenstein.jpg'
+            },
+            d: {
+                title: "Fahrenheit 451",
+                url: './images/fahrenheit451.jpg'
         },
         correctAnswer: "b"
-    },
-    {
-        question: "According to a study conducted by the New York Public Library this year, which of the following books is its most regularly borrowed?",
-        answers: {
-            a: "The Very Hungry Caterpillar",
-            b: "Goodnight Moon",
-            c: "The Snowy Day",
-            d: "Harry Potter and the Sorcerer's Stone"
-        },
-        correctAnswer: "c"
-    },
-    {
-        question: "Which of these beloved authors was the first Black American to win the Nobel Prize in literature?",
-        answers: {
-            a: "Toni Morrison",
-            b: "Maya Angelou",
-            c: "James Baldwin",
-            d: "Langston Hughes"
-        },
-        correctAnswer: "a"
+}//,
+    // {
+    //     question: "According to a study conducted by the New York Public Library this year, which of the following books is its most regularly borrowed?",
+    //     answers: {
+    //         a: "The Very Hungry Caterpillar",
+    //         b: "Goodnight Moon",
+    //         c: "The Snowy Day",
+    //         d: "Harry Potter and the Sorcerer's Stone"
+    //     },
+    //     correctAnswer: "c"
+    // },
+    // {
+    //     question: "Which of these beloved authors was the first Black American to win the Nobel Prize in literature?",
+    //     answers: {
+    //         a: "Toni Morrison",
+    //         b: "Maya Angelou",
+    //         c: "James Baldwin",
+    //         d: "Langston Hughes"
+    //     },
+    //     correctAnswer: "a"
     }
 ]
 
