@@ -60,9 +60,18 @@ for (let i = 0; i < triviaQuestions.length; i++) {
     choiceA.innerHTML = triviaQuestions[i].answers.a.title;
     choiceB.innerHTML = triviaQuestions[i].answers.b.title;
     choiceC.innerHTML = triviaQuestions[i].answers.c.title;
-    choiceD.innerHTML = triviaQuestions[i].answers.d.title;
+    choiceD.innerHTML = triviaQuestions[i].answers.d.title; 
 }
 
+function checkIfCorrect (e) {
+    e.preventDefault; 
+    console.log('Testing');
+}
+
+choiceA.addEventListener("click", checkIfCorrect);
+choiceB.addEventListener("click", checkIfCorrect);
+choiceC.addEventListener("click", checkIfCorrect);
+choiceD.addEventListener("click", checkIfCorrect);
 
 
 // for (let i = 0; i < characters.length; i++) {
