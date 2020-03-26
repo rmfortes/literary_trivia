@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Literary Trivia</title>
+    <title>Lit Trivia</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,9 +15,30 @@
 
     <h1>Literary Trivia</h1>
     <h3>(It's lit.)</h3>
-    <div class="board">Board.
-        <button class="submitButton">Submit!</button>
+    <button>Previous</button>
+    <div class="board">
+        <div class="question"></div>
+        <form>
+            <label class="a">
+                <input type="radio" name="choice">
+                <img src="">
+            </label>
+            <label class="b">
+                <input type="radio" name="choice">
+                <img src="">
+            </label>
+            <label class="c">
+                <input type="radio" name="choice">
+                <img src="">
+            </label>
+            <label class="d">
+                <input type="radio" name="choice">
+                <img src="">
+            </label>
+            <input type="button" id="submit">
+        </form>
     </div>
+    <button>Next</button>
 
     <script src="script.js"></script>
 </body>
