@@ -90,14 +90,24 @@ function next(e) {
     c.setAttribute("data-check", triviaQuestions[count].answers.c.correct);
 
     d.setAttribute("src", triviaQuestions[count].answers.d.url);
-    count++;
     d.setAttribute("data-check", triviaQuestions[count].answers.d.correct);
+
+    a.addEventListener("click", checkIfCorrect);
+    b.addEventListener("click", checkIfCorrect);
+    c.addEventListener("click", checkIfCorrect);
+    d.addEventListener("click", checkIfCorrect);
+
+    count++;
 }
 
 function checkIfCorrect(e) {
     e.preventDefault;
-    console.dir(e.target.dataset.check);
-    if (e.target.dataset.check==='true') {
+    a.removeEventListener("click", checkIfCorrect);
+    b.removeEventListener("click", checkIfCorrect);
+    c.removeEventListener("click", checkIfCorrect);
+    d.removeEventListener("click", checkIfCorrect);
+    console.log(e.target.className);
+    if (e.target.dataset.check === 'true') {
         tally.push(count);
     } else {
         console.log('u wrong');
@@ -105,25 +115,22 @@ function checkIfCorrect(e) {
 
 }
 
-function goHome (e) {
-    e.preventDefault; 
+function goHome(e) {
+    e.preventDefault;
     console.log('go home');
 }
 
 //button functionalities 
 homeButton.addEventListener("click", goHome);
 nextButton.addEventListener("click", next);
-a.addEventListener("click", checkIfCorrect);
-b.addEventListener("click", checkIfCorrect);
-c.addEventListener("click", checkIfCorrect);
-d.addEventListener("click", checkIfCorrect);
+
 
 //array for scoring 
 let score = [];
 
 //formula for scoring 
 // @ end -- how to decide end? 
-if (score.length >=8) {
+if (score.length >= 8) {
     // Good work! 
 } else if (5 > score.length < 7) {
     //Not bad!

@@ -17,7 +17,8 @@ nav {
     width: 700px;
 }
 
-image {
+.a, .b, .c, .d {
+    display: grid;
     height: 250px;
-    width: 250px;
 }
+
