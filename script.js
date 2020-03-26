@@ -46,14 +46,22 @@ const triviaQuestions = [
     }
 ]
 
+//basic structure!
 let board = document.querySelector(".board");
-let questionContainer = document.querySelector(".question"); //access HTML to hold question
-let choices = document.querySelector("form"); //accesses HTML to display choices
+let questionContainer = document.querySelector(".question");  
+
+//all your buttons!
 let submitButton = document.querySelector("#submit");
 let choiceA = document.querySelector(".a");
 let choiceB = document.querySelector(".b");
 let choiceC = document.querySelector(".c");
 let choiceD = document.querySelector(".d");
+
+//to populate choices with book covers!
+let bookCoverA = document.querySelector(".photoA");
+let bookCoverB = document.querySelector(".photoB");
+let bookCoverC = document.querySelector(".photoC");
+let bookCoverD = document.querySelector(".photoD");
 
 for (let i = 0; i < triviaQuestions.length; i++) {
     questionContainer.innerHTML = triviaQuestions[i].question;
@@ -61,6 +69,10 @@ for (let i = 0; i < triviaQuestions.length; i++) {
     choiceB.innerHTML = triviaQuestions[i].answers.b.title;
     choiceC.innerHTML = triviaQuestions[i].answers.c.title;
     choiceD.innerHTML = triviaQuestions[i].answers.d.title; 
+    bookCoverA.setAttribute("src", triviaQuestions[i].answers.a.url);
+    bookCoverB.setAttribute("src", triviaQuestions[i].answers.b.url);
+    bookCoverC.setAttribute("src", triviaQuestions[i].answers.c.url);
+    bookCoverD.setAttribute("src", triviaQuestions[i].answers.d.url);
 }
 
 function checkIfCorrect (e) {
@@ -74,37 +86,6 @@ choiceC.addEventListener("click", checkIfCorrect);
 choiceD.addEventListener("click", checkIfCorrect);
 
 
-// for (let i = 0; i < characters.length; i++) {
-//     //creating the buttons
-//     let button = document.createElement("button");
-//     cast[i].appendChild(button);
-//     button.className = "more-info";
-//     button.innerHTML = "Learn more.";
-//     let mortalityButton = document.createElement("button");
-//     cast[i].appendChild(mortalityButton);
-//     mortalityButton.className = "alive-or-dead";
-//     mortalityButton.innerHTML = "Dead or Alive?";
-
-//     let mortalityContainer = document.createElement("p");
-//     let mortalityText = characters[i].status;
-//     let text = document.createTextNode(mortalityText);
-//     mortalityContainer.appendChild(text);
-//     mortalityContainer.classList.add("dead");
-
-//     let bioContainer = document.createElement("p");
-//     let bioText = characters[i].bio;
-//     let textNode = document.createTextNode(bioText);
-//     bioContainer.appendChild(textNode);
-//     bioContainer.classList.add("bio");
-
-// function buildQuiz() { //this builds our trivia game.
-//     let output = []; //to store HTML output 
-//     let answers = [];
-
-//     triviaQuestions.forEach(
-//         (currentQuestion 
-//     )
-// }
 
 // buildQuiz();
 
