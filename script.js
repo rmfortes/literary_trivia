@@ -108,22 +108,24 @@ function previous(e) {
 }
 
 
+
 function checkIfCorrect(e) {
     e.preventDefault;
-    console.log('Testing');
+    if ()
+    console.log("am I correct?");
     
     
     
-    //  if answer is correct
-    if (userAnswer === currentQuestion.correctAnswer) {
-        numCorrect++;
+    // //  if answer is correct
+    // if (userAnswer === currentQuestion.correctAnswer) {
+    //     numCorrect++;
 
-        //make answers green
-        answerContainers[questionNumber].style.color = green;
-    }
-    else { //answer is incorrect
-        answerContainers[questionNumber].style.color = 'red';
-    }
+    //     //make answers green
+    //     answerContainers[questionNumber].style.color = green;
+    // }
+    // else { //answer is incorrect
+    // //     answerContainers[questionNumber].style.color = 'red';
+    // }
 }
 
 function goHome (e) {
@@ -135,10 +137,13 @@ function goHome (e) {
 homeButton.addEventListener("click", goHome);
 previousButton.addEventListener("click", previous);
 nextButton.addEventListener("click", next);
-choiceA.addEventListener("click", checkIfCorrect);
-choiceB.addEventListener("click", checkIfCorrect);
-choiceC.addEventListener("click", checkIfCorrect);
-choiceD.addEventListener("click", checkIfCorrect);
+bookCoverA.addEventListener("click", checkIfCorrect);
+bookCoverB.addEventListener("click", checkIfCorrect);
+bookCoverC.addEventListener("click", checkIfCorrect);
+bookCoverD.addEventListener("click", checkIfCorrect);
+
+//array for scoring 
+let score = [];
 
 
 
