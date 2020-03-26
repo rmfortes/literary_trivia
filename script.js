@@ -66,6 +66,7 @@ let choiceC = document.querySelector(".c");
 let choiceD = document.querySelector(".d");
 let previousButton = document.querySelector(".previous");
 let nextButton = document.querySelector(".next");
+let homeButton = document.querySelector(".home");
 
 //to populate choices with book covers!
 let bookCoverA = document.querySelector(".photoA");
@@ -110,9 +111,28 @@ function previous(e) {
 function checkIfCorrect(e) {
     e.preventDefault;
     console.log('Testing');
+    
+    
+    
+    //  if answer is correct
+    if (userAnswer === currentQuestion.correctAnswer) {
+        numCorrect++;
+
+        //make answers green
+        answerContainers[questionNumber].style.color = green;
+    }
+    else { //answer is incorrect
+        answerContainers[questionNumber].style.color = 'red';
+    }
+}
+
+function goHome (e) {
+    e.preventDefault; 
+    console.log('go home');
 }
 
 //button functionalities 
+homeButton.addEventListener("click", goHome);
 previousButton.addEventListener("click", previous);
 nextButton.addEventListener("click", next);
 choiceA.addEventListener("click", checkIfCorrect);
@@ -162,16 +182,7 @@ choiceD.addEventListener("click", checkIfCorrect);
 //         // let userAnswer = (answerContainer.querySelector(selector || {})).value;
 
 
-//         //if answer is correct
-//         if (userAnswer === currentQuestion.correctAnswer) {
-//             numCorrect++;
-
-//             //make answers green
-//             answerContainers[questionNumber].style.color = green;
-//         }
-//         else { //answer is incorrect
-//             answerContainers[questionNumber].style.color = 'red';
-//         }
+//     
 //     });
 
 //     resultsContainers.innerHTML = `${numCorrect} out of ${triviaQuestions.length}`;
