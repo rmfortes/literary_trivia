@@ -23,7 +23,6 @@ const triviaQuestions = [
                 url: './images/fahrenheit451.jpg',
                 correct: false
             },
-            correctAnswer: "b"
         }
     },
     {
@@ -32,7 +31,7 @@ const triviaQuestions = [
             a: {
                 title: "The Very Hungry Caterpillar",
                 url: './images/veryhungrycaterpillar.jpg',
-                correct: false
+                correct: false,
             },
             b: {
                 title: "Goodnight Moon",
@@ -49,7 +48,6 @@ const triviaQuestions = [
                 url: './images/harrypottersorcerersstone.jpg',
                 correct: true
             },
-            correctAnswer: "c"
         },
     }
 ]
@@ -68,64 +66,43 @@ let previousButton = document.querySelector(".previous");
 let nextButton = document.querySelector(".next");
 let homeButton = document.querySelector(".home");
 
-//to populate choices with book covers!
-let bookCoverA = document.querySelector(".photoA");
-let bookCoverB = document.querySelector(".photoB");
-let bookCoverC = document.querySelector(".photoC");
-let bookCoverD = document.querySelector(".photoD");
+
+let a = document.querySelector(".a");
+let b = document.querySelector(".b");
+let c = document.querySelector(".c");
+let d = document.querySelector(".d");
 
 
 let count = 0;
+let tally = [];
 
 function next(e) {
     e.preventDefault;
     console.log('next question');
     questionContainer.innerHTML = triviaQuestions[count].question;
-    choiceA.innerHTML = triviaQuestions[count].answers.a.title;
-    choiceB.innerHTML = triviaQuestions[count].answers.b.title;
-    choiceC.innerHTML = triviaQuestions[count].answers.c.title;
-    choiceD.innerHTML = triviaQuestions[count].answers.d.title;
-    bookCoverA.setAttribute("src", triviaQuestions[count].answers.a.url);
-    bookCoverB.setAttribute("src", triviaQuestions[count].answers.b.url);
-    bookCoverC.setAttribute("src", triviaQuestions[count].answers.c.url);
-    bookCoverD.setAttribute("src", triviaQuestions[count].answers.d.url);
+    a.setAttribute("src", triviaQuestions[count].answers.a.url);
+    a.setAttribute("data-check", triviaQuestions[count].answers.a.correct);
+
+    b.setAttribute("src", triviaQuestions[count].answers.b.url);
+    b.setAttribute("data-check", triviaQuestions[count].answers.b.correct);
+
+    c.setAttribute("src", triviaQuestions[count].answers.c.url);
+    c.setAttribute("data-check", triviaQuestions[count].answers.c.correct);
+
+    d.setAttribute("src", triviaQuestions[count].answers.d.url);
     count++;
+    d.setAttribute("data-check", triviaQuestions[count].answers.d.correct);
 }
-
-function previous(e) {
-    e.preventDefault;
-    console.log('previous question');
-    --count;
-    questionContainer.innerHTML = triviaQuestions[count].question;
-    choiceA.innerHTML = triviaQuestions[count].answers.a.title;
-    choiceB.innerHTML = triviaQuestions[count].answers.b.title;
-    choiceC.innerHTML = triviaQuestions[count].answers.c.title;
-    choiceD.innerHTML = triviaQuestions[count].answers.d.title;
-    bookCoverA.setAttribute("src", triviaQuestions[count].answers.a.url);
-    bookCoverB.setAttribute("src", triviaQuestions[count].answers.b.url);
-    bookCoverC.setAttribute("src", triviaQuestions[count].answers.c.url);
-    bookCoverD.setAttribute("src", triviaQuestions[count].answers.d.url);
-}
-
-
 
 function checkIfCorrect(e) {
     e.preventDefault;
-    if ()
-    console.log("am I correct?");
-    
-    
-    
-    // //  if answer is correct
-    // if (userAnswer === currentQuestion.correctAnswer) {
-    //     numCorrect++;
+    console.dir(e.target.dataset.check);
+    if (e.target.dataset.check==='true') {
+        tally.push(count);
+    } else {
+        console.log('u wrong');
+    }
 
-    //     //make answers green
-    //     answerContainers[questionNumber].style.color = green;
-    // }
-    // else { //answer is incorrect
-    // //     answerContainers[questionNumber].style.color = 'red';
-    // }
 }
 
 function goHome (e) {
@@ -135,63 +112,21 @@ function goHome (e) {
 
 //button functionalities 
 homeButton.addEventListener("click", goHome);
-previousButton.addEventListener("click", previous);
 nextButton.addEventListener("click", next);
-bookCoverA.addEventListener("click", checkIfCorrect);
-bookCoverB.addEventListener("click", checkIfCorrect);
-bookCoverC.addEventListener("click", checkIfCorrect);
-bookCoverD.addEventListener("click", checkIfCorrect);
+a.addEventListener("click", checkIfCorrect);
+b.addEventListener("click", checkIfCorrect);
+c.addEventListener("click", checkIfCorrect);
+d.addEventListener("click", checkIfCorrect);
 
 //array for scoring 
 let score = [];
 
-
-
-// buildQuiz();
-
-// function buildQuiz() { //this will build our trivia game. 
-//     let output = []; //to store HTML output
-//     let answers = [];
-
-//     triviaQuestions.forEach(
-//         (currentQuestion, questionNumber) => { //currentQuestion=current value; questionNumber=index
-//             let answers = []; //to store the list of answer choices.
-//             for (letter in currentQuestion.answers) { //for each available answer.
-
-//                 answers.push( //add an HTML radio button? 
-//                 `<div>
-//                     <input type="radio" name="question${questionNumber}" value="${letter}">
-//                     ${letter} : 
-//                     ${currentQuestion.answers[letter]}
-//                 </div>`
-//                 );
-//             }
-
-//             output.push(
-//                 `<div class="question">${currentQuestion.question} </div>
-//                 <div class="answers"> ${answers.join('')} </div>`
-//             );
-//         }
-//     );
-//     board.innerHTML = output.join('');
-// }
-
-// buildQuiz(); // actually builds the quiz
-
-// function showResult() { //will display the correct answer, once the visitor submits. 
-//     let answerContainers = board.querySelectorAll(".answers"); //gathers answer containers
-//     let numCorrect = 0; //keeps track of user input/can be overwritten
-//     triviaQuestions.forEach((currentQuestion, questionNumber) => {
-//         // let answerContainer = answerContainers[questionNumber];
-//         // let selector = `input[name=questions${questionNumber}]:checked`;
-//         // let userAnswer = (answerContainer.querySelector(selector || {})).value;
-
-
-//     
-//     });
-
-//     resultsContainers.innerHTML = `${numCorrect} out of ${triviaQuestions.length}`;
-// }
-
-
-// submitButton.addEventListener('click', showResult) //where is my submit button? 
+//formula for scoring 
+// @ end -- how to decide end? 
+if (score.length >=8) {
+    // Good work! 
+} else if (5 > score.length < 7) {
+    //Not bad!
+} else if (score.length < 5) {
+    //not too hot, but the world is yours for the reading. 
+}
