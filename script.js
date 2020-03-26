@@ -5,19 +5,23 @@ const triviaQuestions = [
         answers: {
             a: {
                 title: "Where the Red Fern Grows",
-                url: './images/wheretheredferngrows.jpg'
+                url: './images/wheretheredferngrows.jpg',
+                correct: false
             },
             b: {
                 title: "The Great Gatsby",
-                url: './images/greatgatsby.jpg'
+                url: './images/greatgatsby.jpg',
+                correct: true
             },
             c: {
                 title: "Frankenstein",
-                url: './images/frankenstein.jpg'
+                url: './images/frankenstein.jpg',
+                correct: false
             },
             d: {
                 title: "Fahrenheit 451",
-                url: './images/fahrenheit451.jpg'
+                url: './images/fahrenheit451.jpg',
+                correct: false
             },
             correctAnswer: "b"
         }
@@ -28,18 +32,22 @@ const triviaQuestions = [
             a: {
                 title: "The Very Hungry Caterpillar",
                 url: './images/veryhungrycaterpillar.jpg',
+                correct: false
             },
             b: {
                 title: "Goodnight Moon",
-                url: './images/goodnightmoon.jpg'
+                url: './images/goodnightmoon.jpg',
+                correct: false
             },
             c: {
                 title: "The Snowy Day",
-                url: './images/snowday.jpg'
+                url: './images/snowyday.jpg',
+                correct: true
             },
             d: {
                 title: "Harry Potter and the Sorcerer's Stone",
-                url: './images/harrypottersorcerersstone'
+                url: './images/harrypottersorcerersstone.jpg',
+                correct: true
             },
             correctAnswer: "c"
         },
@@ -48,7 +56,7 @@ const triviaQuestions = [
 
 //basic structure!
 let board = document.querySelector(".board");
-let questionContainer = document.querySelector(".question");  
+let questionContainer = document.querySelector(".question");
 
 //all your buttons!
 let submitButton = document.querySelector("#submit");
@@ -56,6 +64,8 @@ let choiceA = document.querySelector(".a");
 let choiceB = document.querySelector(".b");
 let choiceC = document.querySelector(".c");
 let choiceD = document.querySelector(".d");
+let previousButton = document.querySelector(".previous");
+let nextButton = document.querySelector(".next");
 
 //to populate choices with book covers!
 let bookCoverA = document.querySelector(".photoA");
@@ -63,23 +73,48 @@ let bookCoverB = document.querySelector(".photoB");
 let bookCoverC = document.querySelector(".photoC");
 let bookCoverD = document.querySelector(".photoD");
 
-for (let i = 0; i < triviaQuestions.length; i++) {
-    questionContainer.innerHTML = triviaQuestions[i].question;
-    choiceA.innerHTML = triviaQuestions[i].answers.a.title;
-    choiceB.innerHTML = triviaQuestions[i].answers.b.title;
-    choiceC.innerHTML = triviaQuestions[i].answers.c.title;
-    choiceD.innerHTML = triviaQuestions[i].answers.d.title; 
-    bookCoverA.setAttribute("src", triviaQuestions[i].answers.a.url);
-    bookCoverB.setAttribute("src", triviaQuestions[i].answers.b.url);
-    bookCoverC.setAttribute("src", triviaQuestions[i].answers.c.url);
-    bookCoverD.setAttribute("src", triviaQuestions[i].answers.d.url);
+
+let count = 0;
+
+function next(e) {
+    e.preventDefault;
+    console.log('next question');
+    questionContainer.innerHTML = triviaQuestions[count].question;
+    choiceA.innerHTML = triviaQuestions[count].answers.a.title;
+    choiceB.innerHTML = triviaQuestions[count].answers.b.title;
+    choiceC.innerHTML = triviaQuestions[count].answers.c.title;
+    choiceD.innerHTML = triviaQuestions[count].answers.d.title;
+    bookCoverA.setAttribute("src", triviaQuestions[count].answers.a.url);
+    bookCoverB.setAttribute("src", triviaQuestions[count].answers.b.url);
+    bookCoverC.setAttribute("src", triviaQuestions[count].answers.c.url);
+    bookCoverD.setAttribute("src", triviaQuestions[count].answers.d.url);
+    count++;
 }
 
-function checkIfCorrect (e) {
-    e.preventDefault; 
+function previous(e) {
+    e.preventDefault;
+    console.log('previous question');
+    --count;
+    questionContainer.innerHTML = triviaQuestions[count].question;
+    choiceA.innerHTML = triviaQuestions[count].answers.a.title;
+    choiceB.innerHTML = triviaQuestions[count].answers.b.title;
+    choiceC.innerHTML = triviaQuestions[count].answers.c.title;
+    choiceD.innerHTML = triviaQuestions[count].answers.d.title;
+    bookCoverA.setAttribute("src", triviaQuestions[count].answers.a.url);
+    bookCoverB.setAttribute("src", triviaQuestions[count].answers.b.url);
+    bookCoverC.setAttribute("src", triviaQuestions[count].answers.c.url);
+    bookCoverD.setAttribute("src", triviaQuestions[count].answers.d.url);
+}
+
+
+function checkIfCorrect(e) {
+    e.preventDefault;
     console.log('Testing');
 }
 
+//button functionalities 
+previousButton.addEventListener("click", previous);
+nextButton.addEventListener("click", next);
 choiceA.addEventListener("click", checkIfCorrect);
 choiceB.addEventListener("click", checkIfCorrect);
 choiceC.addEventListener("click", checkIfCorrect);
