@@ -1,7 +1,7 @@
 // an object literal will store the trivia questions and their answers. 
 const triviaQuestions = [
     {
-        question: "Which great American novel was a tremendous failure upon its publication? School curricula sparked renewed interest in it around WWII and today, it is its publishing house's most popular title.",
+        question: "Which great American novel was a tremendous failure upon its publication?",
         answers: {
             a: {
                 title: "Where the Red Fern Grows by Wilson Rawls",
@@ -23,7 +23,8 @@ const triviaQuestions = [
                 url: './images/fahrenheit451.jpg',
                 correct: false
             },
-        }
+        },
+        bonusTrivia: "F. Scott Fitzgerald had experienced much success before its publication, but The Great Gatsby was poorly received. He died thinking himself a failure, mostly forgotten. School curricula sparked renewed interest in it around WWII and today, it is its publishing house's highest-selling title."
     },
     {
         question: "According to a study conducted by the New York Public Library this year, which of the following books is its most regularly borrowed?",
@@ -298,6 +299,7 @@ let b = document.querySelector(".b");
 let c = document.querySelector(".c");
 let d = document.querySelector(".d");
 
+let bonus = document.querySelector(".bonus");
 
 let count = 0;
 let tally = [];
@@ -337,20 +339,14 @@ function checkIfCorrect(e) {
     d.removeEventListener("click", checkIfCorrect);
     console.log(e.target.className);
 
-    let arr = ['a', 'b', 'c', 'd']
-
-    for (let i = 0; i < arr.length; i++) {
-        if (triviaQuestions.answers.arr[i].correct === 'true') {
-            style.border = "green";
-        } else {
-            style.border = "red";
-        }
-    }
-
     if (e.target.dataset.check === 'true') {
         tally.push(count);
+
+        bonus.innerHTML = `Nicely done! ${triviaQuestions[count].bonusTrivia}`;
+
     } else {
-        console.log('u wrong');
+        
+        bonus.innerHTML = `No dice! ${triviaQuestions[count].bonusTrivia}`;
     }
 }
 
