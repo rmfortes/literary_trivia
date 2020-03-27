@@ -132,7 +132,7 @@ const triviaQuestions = [
         },
     },
     {
-        question: 'Which of the following books is the most commonly shoplifted?',
+        question: 'Which of the following books is the most commonly stolen?',
         answers: {
             a: {
                 title: 'Steal This Book by Abbie Hoffman',
@@ -206,7 +206,7 @@ const triviaQuestions = [
                 url: "./images/dfw.jpeg",
                 correct: false
             },
-            bonusTrivia: "JK Rowling has actually been demoted to billionaire status for donating a significant portion of her earnings to charity."
+            bonusTrivia: "JK Rowling has actually been demoted to millionaire status for donating a significant portion of her earnings to charity."
         },
     },
     {
@@ -232,7 +232,7 @@ const triviaQuestions = [
                 url: './images/allthelightwecannotsee.jpg',
                 correct: false
             },
-            bonusTrivia: "Gabriel Garcia Marquez's One Hundred Years of Solitude boasts one of literature's most famous first lines: 'Many years later, as he faced the firing squad, Colonel Aureliano Buendia was to remember that distant afternoon when his father took him to discover ice.'"
+            bonusTrivia: "Gabriel Garcia Marquez's One Hundred Years of Solitude is the highest-selling and most-frequenly translated book. It boasts one of literature's most famous first lines: 'Many years later, as he faced the firing squad, Colonel Aureliano Buendia was to remember that distant afternoon when his father took him to discover ice.'"
         },
     },
     {
@@ -258,7 +258,7 @@ const triviaQuestions = [
                 url: "./images/artofthedeal.jpg",
                 correct: true
             },
-            bonusTrivia: "After returning from fighting in WWI, AA Milne sought to write a book that would every war forever. Phil Klay's Redeployment won the 2014 National Book Award in Fiction. JD Salinger had the first few chapters of Catcher in the Rye on him when he landed on the beaches of Normandy on D-Day."
+            bonusTrivia: "After returning from fighting in WWI, AA Milne sought to write a book that would end every war forever. Phil Klay's Redeployment won the 2014 National Book Award in Fiction. JD Salinger had the first few chapters of Catcher in the Rye on him when he landed on the beaches of Normandy on D-Day."
         },
     }
 ]
