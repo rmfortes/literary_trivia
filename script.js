@@ -23,8 +23,8 @@ const triviaQuestions = [
                 url: './images/fahrenheit451.jpg',
                 correct: false
             },
+             bonusTrivia: "F. Scott Fitzgerald had experienced much success before its publication, but The Great Gatsby was poorly received. He died thinking himself a failure, mostly forgotten. School curricula sparked renewed interest in it around WWII and today, it is its publishing house's highest-selling title."
         },
-        bonusTrivia: "F. Scott Fitzgerald had experienced much success before its publication, but The Great Gatsby was poorly received. He died thinking himself a failure, mostly forgotten. School curricula sparked renewed interest in it around WWII and today, it is its publishing house's highest-selling title."
     },
     {
         question: "According to a study conducted by the New York Public Library this year, which of the following books is its most regularly borrowed?",
@@ -49,6 +49,7 @@ const triviaQuestions = [
                 url: './images/harrypottersorcerersstone.jpg',
                 correct: true
             },
+            bonusTrivia: "In addition to being the most frequently borrowed book from the NYPL, The Snowy Day was the first picture book to portray a Black child positively--simply being a child."
         },
     },
     {
@@ -74,10 +75,11 @@ const triviaQuestions = [
                 url: './images/langstonhughes.jpg',
                 correct: false
             },
+            bonusTrivia: "Toni Morrison published her first novel, The Bluest Eye, when she was 39 years old. She was the first Black woman of any nationality to win the Nobel Prize in literature."
         },
     },
     {
-        question: 'Which of the following books was penned when its author was only 16 years old? (The book was actually published when she was 18 years old.)',
+        question: 'Which of the following books was penned when its author was only 16 years old?',
         answers: {
             a: {
                 title: 'Normal People by Sally Rooney',
@@ -99,6 +101,7 @@ const triviaQuestions = [
                 url: './images/theawakening.jpeg',
                 correct: false
             },
+            bonusTrivia: 'Hinton was 15 when she started writing the novel, 16 when she wrote the bulk of it, and 18 when it was actually published. It is widely regarded as the first YA novel, written specifically for a teenage audience.'
         },
 
     },
@@ -181,27 +184,27 @@ const triviaQuestions = [
         question: 'Legend has it that when Abraham Lincoln was introduced to this author, he said of her and her work, “So this is the little lady who started this great war.” Who was that author, and what was the book?',
         answers: {
             a: {
-            title: "Vindication of the Rights of Woman by Mary Wollstonecraft",
-            url: './images/vindicationoftherightsofwoman.jpg',
-            correct: false
-        },
-        b: {
-            title: "Uncle Tom's Cabin by Harriett Beecher Stowe",
-            url: "./images/uncletomscabin.jpg",
-            correct: true
-        },
-        c: {
-            title: "Mrs Dalloway by Virginia Woolf",
-            url: "./images/mrsdalloway.jpeg",
-            correct: false
-        },
-        d: {
-            title: "Gone With the Wind by Margaret Mitchell",
-            url: "./images/gonewiththewind.jpg",
-            correct: false
+                title: "Vindication of the Rights of Woman by Mary Wollstonecraft",
+                url: './images/vindicationoftherightsofwoman.jpg',
+                correct: false
+            },
+            b: {
+                title: "Uncle Tom's Cabin by Harriett Beecher Stowe",
+                url: "./images/uncletomscabin.jpg",
+                correct: true
+            },
+            c: {
+                title: "Mrs Dalloway by Virginia Woolf",
+                url: "./images/mrsdalloway.jpeg",
+                correct: false
+            },
+            d: {
+                title: "Gone With the Wind by Margaret Mitchell",
+                url: "./images/gonewiththewind.jpg",
+                correct: false
+            },
         },
     },
-},
     {
         question: "Which of the following authors was the first—-and to date, the only—-person to become a billionaire strictly by writing books?",
         answers: {
@@ -305,6 +308,8 @@ let count = 0;
 let tally = [];
 
 function next(e) {
+
+    
     nextButton.removeEventListener("click", next);
 
     e.preventDefault;
@@ -327,7 +332,12 @@ function next(e) {
     c.addEventListener("click", checkIfCorrect);
     d.addEventListener("click", checkIfCorrect);
 
-    count++;
+    
+
+    // if (count = triviaQuestions.length) {
+    //     console.log('finish');
+
+    // }
 }
 
 function checkIfCorrect(e) {
@@ -338,15 +348,16 @@ function checkIfCorrect(e) {
     c.removeEventListener("click", checkIfCorrect);
     d.removeEventListener("click", checkIfCorrect);
     console.log(e.target.className);
+    bq = triviaQuestions[count].answers.bonusTrivia;
 
+    count++;    
     if (e.target.dataset.check === 'true') {
         tally.push(count);
-
-        bonus.innerHTML = `Nicely done! ${triviaQuestions[count].bonusTrivia}`;
+        bonus.innerHTML = `Nicely done! ${bq}`;
 
     } else {
-        
-        bonus.innerHTML = `No dice! ${triviaQuestions[count].bonusTrivia}`;
+
+        bonus.innerHTML = `No dice! ${bq}`;
     }
 }
 
