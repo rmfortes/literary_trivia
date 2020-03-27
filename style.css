@@ -32,7 +32,6 @@ nav {
     width: 100vh;
     position: fixed;
     background-color: #ECD07E;
-    overflow: hidden;
 }
 
 .nav {
@@ -93,6 +92,9 @@ nav {
 .question, .bonus {
     font-family: 'futura', sans-serif; 
     font-size: 18px;
+    width: 890px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .next {
