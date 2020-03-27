@@ -23,7 +23,7 @@ const triviaQuestions = [
                 url: './images/fahrenheit451.jpg',
                 correct: false
             },
-             bonusTrivia: "F. Scott Fitzgerald had experienced much success before its publication, but The Great Gatsby was poorly received. He died thinking himself a failure, mostly forgotten. School curricula sparked renewed interest in it around WWII and today, it is its publishing house's highest-selling title."
+            bonusTrivia: "F. Scott Fitzgerald had experienced much success before its publication, but The Great Gatsby was poorly received. He died thinking himself a failure, mostly forgotten. School curricula sparked renewed interest in it around WWII and today, it is its publishing house's highest-selling title."
         },
     },
     {
@@ -260,6 +260,16 @@ const triviaQuestions = [
             },
             bonusTrivia: "After returning from fighting in WWI, AA Milne sought to write a book that would end every war forever. Phil Klay's Redeployment won the 2014 National Book Award in Fiction. JD Salinger had the first few chapters of Catcher in the Rye on him when he landed on the beaches of Normandy on D-Day."
         },
+    },
+    {
+        question: "All done!",
+        answers: {
+            a: {},
+            b: {},
+            c: {},
+            d: {},
+            bonusTrivia: "Find your next great read at the links up top."
+        }
     }
 ]
 
@@ -277,7 +287,6 @@ let previousButton = document.querySelector(".previous");
 let nextButton = document.querySelector(".next");
 let homeButton = document.querySelector(".home");
 
-
 let a = document.querySelector(".a");
 let b = document.querySelector(".b");
 let c = document.querySelector(".c");
@@ -285,12 +294,28 @@ let d = document.querySelector(".d");
 
 let bonus = document.querySelector(".bonus");
 
-let count = 0;
-let tally = [];
+let count = 0; //keeps track of what question to display.
+let tally = []; //keeps track of user score.
 
-function next(e) {
+function finish() { //invokes end of game, prints score. 
+    bq = triviaQuestions[10].answers.bonusTrivia;
+    if (count == 10) {
+        if (tally.length >= 8) {
+            console.log('hi');
+            bonus.innerHTML = `Your score is ${tally.length}/10. Good work! ${bq}`
+        } else if (5 > tally.length < 7) {
+            console.log('hi');
+            bonus.innerHTML = `Your score is ${tally.length}/10. Not bad! ${bq}`
+        } else if (tally.length < 5) {
+            console.log('hi');
+            bonus.innerHTML = `Your score is ${tally.length}/10. Not too hot, but the world is yours for the reading. ${bq}`
+        }
+    }
+}
 
-    
+function next(e) { //prints out every question & option
+
+
     nextButton.removeEventListener("click", next);
 
     e.preventDefault;
@@ -314,12 +339,7 @@ function next(e) {
     c.addEventListener("click", checkIfCorrect);
     d.addEventListener("click", checkIfCorrect);
 
-    
-
-    // if (count = triviaQuestions.length) {
-    //     console.log('finish');
-
-    // }
+    finish();
 }
 
 function checkIfCorrect(e) {
@@ -332,14 +352,19 @@ function checkIfCorrect(e) {
     console.log(e.target.className);
     bq = triviaQuestions[count].answers.bonusTrivia;
 
-    count++;    
+
     if (e.target.dataset.check === 'true') {
         tally.push(count);
         bonus.innerHTML = `Nicely done! ${bq}`;
 
     } else {
-
         bonus.innerHTML = `No dice! ${bq}`;
+    }
+
+    if (count < triviaQuestions.length) {
+        count++;
+    } else {
+        console.log('finished');
     }
 }
 
@@ -353,15 +378,5 @@ homeButton.addEventListener("click", goHome);
 nextButton.addEventListener("click", next);
 
 
-//array for scoring 
-let score = [];
 
-//formula for scoring 
-// @ end -- how to decide end? 
-if (score.length >= 8) {
-    // Good work! 
-} else if (5 > score.length < 7) {
-    //Not bad!
-} else if (score.length < 5) {
-    //not too hot, but the world is yours for the reading. 
-}
+
