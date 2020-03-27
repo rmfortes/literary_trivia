@@ -25,7 +25,7 @@ Visit the project page on GitHub pages.
 
 // Contribution Guidelines 
 
-Should you identify any bugs, have ideas for how to make the code more efficient, or ideas for questions and categories, kindly submit a pull request on this project's GitHub repo. 
+Should you identify any bugs, have ideas for how to make the code more efficient, have any ideas to make this game responsive, or ideas for questions and categories, kindly submit a pull request on this project's GitHub repo. 
 
-Link to repo: 
-Link to project on GitHub pages: 
+Link to repo: https://github.com/rmfortes/frontend-game
+Link to project on GitHub pages: https://rmfortes.github.io/frontend-game/

@@ -103,3 +103,32 @@ nav {
     margin-top: 10px;
     background-color: #E7E5DE;
 }
+
+@media screen and (max-width: 300px) {
+    nav {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+    }
+    h1, h3 {
+        text-align: left;
+    }
+    .board {
+        display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    height: 600px;
+    width: 900px;
+
+    position: absolute;
+    top: 45%;
+    left: 35%;
+    right: 35%;
+    transform: translate(-50%, -50%);
+    }
+    .a, .b, .c, .d {
+        display: flex; 
+        flex-direction: column;
+    }
+  }
