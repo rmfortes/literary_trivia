@@ -300,6 +300,10 @@ let tally = []; //keeps track of user score.
 function finish() { //invokes end of game, prints score. 
     bq = triviaQuestions[10].answers.bonusTrivia;
     if (count == 10) {
+        a.style.display = "none";
+        b.style.display = "none";
+        c.style.display = "none";
+        d.style.display = "none";
         if (tally.length >= 8) {
             console.log('hi');
             bonus.innerHTML = `Your score is ${tally.length}/10. Good work! ${bq}`
@@ -344,18 +348,18 @@ function next(e) { //prints out every question & option
     finish();
 }
 
-let images = document.getElementsByTagName("img");
+// let images = document.getElementsByTagName("img");
 
-for (let i = 0; i < images.length; i++) {
-    images[i].addEventListener('mouseover',show);
-}
+// for (let i = 0; i < images.length; i++) {
+//     images[i].addEventListener('mouseover',show);
+// }
 
-function show(e){
-    e.preventDefault;
-    let alt = this.alt;
-    console.dir(e);
-    images.innerHTML = e.target.alt;
-}
+// function show(e){
+//     e.preventDefault;
+//     let alt = this.alt;
+//     console.dir(e);
+//     images.innerHTML = e.target.alt;
+// }
 
 
 function checkIfCorrect(e) {
