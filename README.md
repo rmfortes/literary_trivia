@@ -5,7 +5,7 @@ Lit Trivia is a ten-question self-scoring trivia game that tests user's knowledg
 # Brief example 
 
 Rendered in the browser, Lit Trivia looks like this: 
-![Lit Trivia](./images/images/littrivia_screenshot.png)
+![Lit Trivia]('./images/images/littrivia_screenshot.png')
 
 # List of features
 

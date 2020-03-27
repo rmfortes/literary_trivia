@@ -110,11 +110,10 @@ nav {
     }
     h1, h3 {
         text-align: left;
+        position: fixed;
     }
     .board {
-        
-    }
-    .a, .b, .c, .d {
-
+        position: fixed;
+        margin-top: 25%;
     }
   }

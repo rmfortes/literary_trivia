@@ -49,7 +49,7 @@ const triviaQuestions = [
                 url: './images/harrypottersorcerersstone.jpg',
                 correct: true
             },
-            bonusTrivia: "In addition to being the most frequently borrowed book from the NYPL, The Snowy Day was the first picture book to portray a Black child positively--simply being a child."
+            bonusTrivia: "In addition to being the most frequently borrowed book from the NYPL, The Snowy Day was the first picture book to portray a Black child positively: simply being a child."
         },
     },
     {
@@ -154,7 +154,7 @@ const triviaQuestions = [
                 url: './images/communist manifesto.jpg',
                 correct: false
             },
-            bonusTrivia: "While The Catcher in the Rye is not one of the most commonly shoplifted titles, it has been associated with many high-profile assassinations, including that of President John F Kennedy and John Lennon. It's believed that this is why Salinger retreated into solitude for the last four decades of his life."
+            bonusTrivia: "In spite of the commandment wherein thou art forbidden from stealing, The Bible is the most commonly stolen book. (While The Catcher in the Rye is not one of the most commonly shoplifted titles, it has been associated with many high-profile assassinations, including that of President John F Kennedy and John Lennon. It's believed that this is why Salinger retreated into solitude for the last four decades of his life.)"
         },
     },
     {
@@ -180,7 +180,7 @@ const triviaQuestions = [
                 url: './images/giovannisroom.jpg',
                 correct: false
             },
-            bonusTrivia: "While James Baldwin was never persecuted for his sexuality, the FBI did compile almost two thousand pages of surveillance on Baldwin."
+            bonusTrivia: "Oscar Wilde was eventually sent to prison for indecency, where he continued writing. (While James Baldwin was never persecuted for his sexuality, the FBI did compile almost two thousand pages of surveillance on Baldwin.)"
         },
     },
     {
@@ -236,7 +236,7 @@ const triviaQuestions = [
         },
     },
     {
-        question: "Which of the following books was not written by an author who served in the armed forces?",
+        question: "Which of the following books was not written by an author after that author served in the armed forces?",
         answers: {
             a: {
                 title: "Winnie the Pooh by AA Milne",
@@ -258,7 +258,7 @@ const triviaQuestions = [
                 url: "./images/artofthedeal.jpg",
                 correct: true
             },
-            bonusTrivia: "After returning from fighting in WWI, AA Milne sought to write a book that would end every war forever. Phil Klay's Redeployment won the 2014 National Book Award in Fiction. JD Salinger had the first few chapters of Catcher in the Rye on him when he landed on the beaches of Normandy on D-Day."
+            bonusTrivia: "After returning from fighting in WWI, AA Milne sought to write a book that would end every war forever. Phil Klay's Redeployment won the 2014 National Book Award in Fiction. JD Salinger carried the first few chapters of Catcher in the Rye on him as an amulet when he landed on the beaches of Normandy on D-Day."
         },
     },
     {
@@ -314,8 +314,6 @@ function finish() { //invokes end of game, prints score.
 }
 
 function next(e) { //prints out every question & option
-
-
     nextButton.removeEventListener("click", next);
 
     e.preventDefault;
@@ -324,15 +322,19 @@ function next(e) { //prints out every question & option
     questionContainer.innerHTML = triviaQuestions[count].question;
     a.setAttribute("src", triviaQuestions[count].answers.a.url);
     a.setAttribute("data-check", triviaQuestions[count].answers.a.correct);
+    a.alt = triviaQuestions[count].answers.a.title;
 
     b.setAttribute("src", triviaQuestions[count].answers.b.url);
     b.setAttribute("data-check", triviaQuestions[count].answers.b.correct);
+    b.alt = triviaQuestions[count].answers.b.title;
 
     c.setAttribute("src", triviaQuestions[count].answers.c.url);
     c.setAttribute("data-check", triviaQuestions[count].answers.c.correct);
+    c.alt = triviaQuestions[count].answers.c.title;
 
     d.setAttribute("src", triviaQuestions[count].answers.d.url);
     d.setAttribute("data-check", triviaQuestions[count].answers.d.correct);
+    d.alt = triviaQuestions[count].answers.d.title;
 
     a.addEventListener("click", checkIfCorrect);
     b.addEventListener("click", checkIfCorrect);
@@ -341,6 +343,20 @@ function next(e) { //prints out every question & option
 
     finish();
 }
+
+let images = document.getElementsByTagName("img");
+
+for (let i = 0; i < images.length; i++) {
+    images[i].addEventListener('mouseover',show);
+}
+
+function show(e){
+    e.preventDefault;
+    let alt = this.alt;
+    console.dir(e);
+    images.innerHTML = e.target.alt;
+}
+
 
 function checkIfCorrect(e) {
     e.preventDefault;
@@ -370,7 +386,7 @@ function checkIfCorrect(e) {
 
 function goHome(e) {
     e.preventDefault;
-    console.log('go home');
+    count=0;
 }
 
 //button functionalities 
