@@ -1,13 +1,13 @@
-// Literary Trivia: It's Lit! 
+# Literary Trivia: It's Lit! 
 
 Lit Trivia is a ten-question self-scoring trivia game that tests user's knowledge of literary, publishing, and bookselling history. 
 
-// Brief example 
+# Brief example 
 
 Rendered in the browser, Lit Trivia looks like this: 
 ![Lit Trivia](./images/images/littrivia_screenshot.png)
 
-// List of features
+# List of features
 
 This project is pretty close to its original rendering: a ten-question, self-scoring game with clean, simple design; photos for options; and links to enable users to tap into a greater literary community. 
 
@@ -15,15 +15,15 @@ This project was built using a simple HTML wireframe, the JavaScript Dom, and CS
 
 This developer would like future iterations of this game to include different categories of literary trivia (i.e. "Science Fiction," "Bestsellers," etc.)
 
-// Technologies used 
+# Technologies used 
 
 HTML, CSS, and Javascript. 
 
-// Getting Started 
+# Getting Started 
 
 Visit the project page on GitHub pages. 
 
-// Contribution Guidelines 
+# Contribution Guidelines 
 
 Should you identify any bugs, have ideas for how to make the code more efficient, have any ideas to make this game responsive, or ideas for questions and categories, kindly submit a pull request on this project's GitHub repo. 
 
