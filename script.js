@@ -97,78 +97,184 @@ const triviaQuestions = [
                 title: 'The Awakening by Kate Chopin',
                 url: './images/theawakening.jpeg',
                 correct: false
-                },
             },
-        
         },
+
+    },
     {
         question: 'What was 2018’s highest selling book?',
-        a: {
-            title: 'Becoming by Michelle Obama',
-            url: './images/becoming.jpg',
-            correct: true
-        },
-        b: {
-            title: 'A Higher Loyalty by James Comey',
-            url: './images/higherloyalty.jpg',
-            correct: false
-        },
-        c: {
-            title: 'Fear: Trump in the White House',
-            url: './images/fear.jpg',
-            correct: false
-        },
-        d: {
-            title: 'The Mueller Report',
-            url: './images/muellerreport.jpg',
-            correct: false
+        answers: {
+            a: {
+                title: 'Becoming by Michelle Obama',
+                url: './images/becoming.jpg',
+                correct: true
+            },
+            b: {
+                title: 'A Higher Loyalty by James Comey',
+                url: './images/higherloyalty.jpg',
+                correct: false
+            },
+            c: {
+                title: 'Fear: Trump in the White House',
+                url: './images/fear.jpg',
+                correct: false
+            },
+            d: {
+                title: 'The Mueller Report',
+                url: './images/muellerreport.jpg',
+                correct: false
+            },
         },
     },
     {
         question: 'Which of the following books is the most commonly shoplifted?',
-        a: {
-            title: 'Steal This Book by Abbie Hoffman',
-            url: './images/stealthisbook.jpg',
-            correct: false
-        },
-        b: {
-            title: 'The Bible',
-            url: './images/bible.jpg',
-            correct: true
-        },
-        c: {
-            title: 'The Catcher in the Rye by JD Salinger',
-            url: './images/catcherintherye.jpg',
-            correct: false
-        },
-        d: {
-            title: 'The Communist Manifesto by Karl Marx & Frederick Engels',
-            url: './images/communist manifesto.jpg',
-            correct: false
+        answers: {
+            a: {
+                title: 'Steal This Book by Abbie Hoffman',
+                url: './images/stealthisbook.jpg',
+                correct: false
+            },
+            b: {
+                title: 'The Bible',
+                url: './images/bible.jpg',
+                correct: true
+            },
+            c: {
+                title: 'The Catcher in the Rye by JD Salinger',
+                url: './images/catcherintherye.jpg',
+                correct: false
+            },
+            d: {
+                title: 'The Communist Manifesto by Karl Marx & Frederick Engels',
+                url: './images/communist manifesto.jpg',
+                correct: false
+            },
         },
     },
     {
         question: 'Which of the following books was used as evidence against its author in a trial persecuting that author for homosexuality?',
-        a: {
-            title: 'Where the Wild Things Are by Maurice Sendak',
-            url: './images/wherethewildthingsare.jpg',
+        answers: {
+            a: {
+                title: 'Where the Wild Things Are by Maurice Sendak',
+                url: './images/wherethewildthingsare.jpg',
+                correct: false
+            },
+            b: {
+                title: 'The Picture of Dorian Gray by Truman Capote',
+                url: './images/pictureofdoriangray.jpg',
+                correct: true
+            },
+            c: {
+                title: 'In Cold Blood by Truman Capote',
+                url: './images/incoldblood.jpg',
+                correct: false
+            },
+            d: {
+                title: "Giovanni's Room by James Baldwin",
+                url: './images/giovannisroom.jpg',
+                correct: false
+            },
+        },
+    },
+    {
+        question: 'Legend has it that when Abraham Lincoln was introduced to this author, he said of her and her work, “So this is the little lady who started this great war.” Who was that author, and what was the book?',
+        answers: {
+            a: {
+            title: "Vindication of the Rights of Woman by Mary Wollstonecraft",
+            url: './images/vindicationoftherightsofwoman.jpg',
             correct: false
         },
         b: {
-            title: 'The Picture of Dorian Gray by Truman Capote',
-            url: './images/pictureofdoriangray.jpg',
+            title: "Uncle Tom's Cabin by Harriett Beecher Stowe",
+            url: "./images/uncletomscabin.jpg",
             correct: true
         },
         c: {
-            title: 'In Cold Blood by Truman Capote',
-            url: './images/incoldblood.jpg',
+            title: "Mrs Dalloway by Virginia Woolf",
+            url: "./images/mrsdalloway.jpeg",
             correct: false
         },
         d: {
-            
-        }
-    }
-
+            title: "Gone With the Wind by Margaret Mitchell",
+            url: "./images/gonewiththewind.jpg",
+            correct: false
+        },
+    },
+},
+    {
+        question: "Which of the following authors was the first—-and to date, the only—-person to become a billionaire strictly by writing books?",
+        answers: {
+            a: {
+                title: "JK Rowling",
+                url: "./images/JKRowling.jpg",
+                correct: true
+            },
+            b: {
+                title: "Stephen King",
+                url: "./images/stephenking.jpg",
+                correct: false
+            },
+            c: {
+                title: "Agatha Christie",
+                url: './images/agathachristie.jpg',
+                correct: false
+            },
+            d: {
+                title: "David Foster Wallace",
+                url: "./images/dfw.jpeg",
+                correct: false
+            },
+        },
+    },
+    {
+        question: "Which of the following books was translated into English (i.e. originally written in a language other than English)?",
+        answers: {
+            a: {
+                title: "Lolita by Vladimir Nabokov",
+                url: "./images/lolita.jpg",
+                correct: false
+            },
+            b: {
+                title: "One Hundred Years of Solitude by Gabriel Garcia Marquez",
+                url: "./images/onehudnredyears.jpg",
+                correct: true
+            },
+            c: {
+                title: "The Goldfinch",
+                url: './images/goldfinch.jpg',
+                correct: false
+            },
+            d: {
+                title: "All the Light We Cannot See by Anthony Doerr",
+                url: './images/allthelightwecannotsee.jpg',
+                correct: false
+            },
+        },
+    },
+    {
+        question: "Which of the following books was not written by an author who served in the armed forces?",
+        answers: {
+            a: {
+                title: "Winnie the Pooh by AA Milne",
+                url: "./images/winniethepooh.jpg",
+                correct: false
+            },
+            b: {
+                title: "Redeployment by Phil Klay",
+                url: "./images/redeployment.jpg",
+                correct: false
+            },
+            c: {
+                title: "Catcher in the Rye by JD Salinger",
+                url: "./images/catcherintherye.jpg",
+                correct: false
+            },
+            d: {
+                title: "The Art of the Deal by Donald Trump",
+                url: "./images/artofthedeal.jpg",
+                correct: true
+            },
+        },
     }
 ]
 
