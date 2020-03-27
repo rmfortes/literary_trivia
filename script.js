@@ -77,6 +77,8 @@ let count = 0;
 let tally = [];
 
 function next(e) {
+    nextButton.removeEventListener("click", next);
+
     e.preventDefault;
     console.log('next question');
     questionContainer.innerHTML = triviaQuestions[count].question;
@@ -102,6 +104,7 @@ function next(e) {
 
 function checkIfCorrect(e) {
     e.preventDefault;
+    nextButton.addEventListener("click", next);
     a.removeEventListener("click", checkIfCorrect);
     b.removeEventListener("click", checkIfCorrect);
     c.removeEventListener("click", checkIfCorrect);
@@ -112,7 +115,6 @@ function checkIfCorrect(e) {
     } else {
         console.log('u wrong');
     }
-
 }
 
 function goHome(e) {
