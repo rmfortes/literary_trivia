@@ -106,7 +106,7 @@ const triviaQuestions = [
 
     },
     {
-        question: 'What was 2018’s highest selling book?',
+        question: 'What was 2018’s highest selling book in the US?',
         answers: {
             a: {
                 title: 'Becoming by Michelle Obama',
@@ -128,6 +128,7 @@ const triviaQuestions = [
                 url: './images/muellerreport.jpg',
                 correct: false
             },
+            bonusTrivia: "Michelle Obama's 'Becoming' broke the record for most books sold in 2018 in just 15 days. Questlove curated a soundtrack for the book, called The Michelle Obama Musiaqualogy."
         },
     },
     {
@@ -153,6 +154,7 @@ const triviaQuestions = [
                 url: './images/communist manifesto.jpg',
                 correct: false
             },
+            bonusTrivia: "While The Catcher in the Rye is not one of the most commonly shoplifted titles, it has been associated with many high-profile assassinations, including that of President John F Kennedy and John Lennon. It's believed that this is why Salinger retreated into solitude for the last four decades of his life."
         },
     },
     {
@@ -164,7 +166,7 @@ const triviaQuestions = [
                 correct: false
             },
             b: {
-                title: 'The Picture of Dorian Gray by Truman Capote',
+                title: 'The Picture of Dorian Gray by Oscar Wilde',
                 url: './images/pictureofdoriangray.jpg',
                 correct: true
             },
@@ -178,31 +180,7 @@ const triviaQuestions = [
                 url: './images/giovannisroom.jpg',
                 correct: false
             },
-        },
-    },
-    {
-        question: 'Legend has it that when Abraham Lincoln was introduced to this author, he said of her and her work, “So this is the little lady who started this great war.” Who was that author, and what was the book?',
-        answers: {
-            a: {
-                title: "Vindication of the Rights of Woman by Mary Wollstonecraft",
-                url: './images/vindicationoftherightsofwoman.jpg',
-                correct: false
-            },
-            b: {
-                title: "Uncle Tom's Cabin by Harriett Beecher Stowe",
-                url: "./images/uncletomscabin.jpg",
-                correct: true
-            },
-            c: {
-                title: "Mrs Dalloway by Virginia Woolf",
-                url: "./images/mrsdalloway.jpeg",
-                correct: false
-            },
-            d: {
-                title: "Gone With the Wind by Margaret Mitchell",
-                url: "./images/gonewiththewind.jpg",
-                correct: false
-            },
+            bonusTrivia: "While James Baldwin was never persecuted for his sexuality, the FBI did compile almost two thousand pages of surveillance on Baldwin."
         },
     },
     {
@@ -228,6 +206,7 @@ const triviaQuestions = [
                 url: "./images/dfw.jpeg",
                 correct: false
             },
+            bonusTrivia: "JK Rowling has actually been demoted to billionaire status for donating a significant portion of her earnings to charity."
         },
     },
     {
@@ -253,6 +232,7 @@ const triviaQuestions = [
                 url: './images/allthelightwecannotsee.jpg',
                 correct: false
             },
+            bonusTrivia: "Gabriel Garcia Marquez's One Hundred Years of Solitude boasts one of literature's most famous first lines: 'Many years later, as he faced the firing squad, Colonel Aureliano Buendia was to remember that distant afternoon when his father took him to discover ice.'"
         },
     },
     {
@@ -278,6 +258,7 @@ const triviaQuestions = [
                 url: "./images/artofthedeal.jpg",
                 correct: true
             },
+            bonusTrivia: "After returning from fighting in WWI, AA Milne sought to write a book that would every war forever. Phil Klay's Redeployment won the 2014 National Book Award in Fiction. JD Salinger had the first few chapters of Catcher in the Rye on him when he landed on the beaches of Normandy on D-Day."
         },
     }
 ]
@@ -314,6 +295,7 @@ function next(e) {
 
     e.preventDefault;
     console.log('next question');
+    bonus.innerHTML = ''
     questionContainer.innerHTML = triviaQuestions[count].question;
     a.setAttribute("src", triviaQuestions[count].answers.a.url);
     a.setAttribute("data-check", triviaQuestions[count].answers.a.correct);
