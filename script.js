@@ -4,22 +4,22 @@ const triviaQuestions = [
         question: "Which great American novel was a tremendous failure upon its publication? School curricula sparked renewed interest in it around WWII and today, it is its publishing house's most popular title.",
         answers: {
             a: {
-                title: "Where the Red Fern Grows",
+                title: "Where the Red Fern Grows by Wilson Rawls",
                 url: './images/wheretheredferngrows.jpg',
                 correct: false
             },
             b: {
-                title: "The Great Gatsby",
+                title: "The Great Gatsby by F Scott Fitzgerald",
                 url: './images/greatgatsby.jpg',
                 correct: true
             },
             c: {
-                title: "Frankenstein",
+                title: "Frankenstein by Mary Shelley",
                 url: './images/frankenstein.jpg',
                 correct: false
             },
             d: {
-                title: "Fahrenheit 451",
+                title: "Fahrenheit 451 by Ray Bradbury",
                 url: './images/fahrenheit451.jpg',
                 correct: false
             },
@@ -29,26 +29,146 @@ const triviaQuestions = [
         question: "According to a study conducted by the New York Public Library this year, which of the following books is its most regularly borrowed?",
         answers: {
             a: {
-                title: "The Very Hungry Caterpillar",
+                title: "The Very Hungry Caterpillar by Eric Carle",
                 url: './images/veryhungrycaterpillar.jpg',
                 correct: false,
             },
             b: {
-                title: "Goodnight Moon",
+                title: "Goodnight Moon by Margaret Wise Brown",
                 url: './images/goodnightmoon.jpg',
                 correct: false
             },
             c: {
-                title: "The Snowy Day",
+                title: "The Snowy Day by Ezra Jack Keats",
                 url: './images/snowyday.jpg',
                 correct: true
             },
             d: {
-                title: "Harry Potter and the Sorcerer's Stone",
+                title: "Harry Potter and the Sorcerer's Stone by JK Rowling",
                 url: './images/harrypottersorcerersstone.jpg',
                 correct: true
             },
         },
+    },
+    {
+        question: 'Which of the following beloved authors was the first Black American to win the Nobel Prize in Literature?',
+        answers: {
+            a: {
+                title: 'Toni Morrison',
+                url: './images/tonimorrison.jpg',
+                correct: true
+            },
+            b: {
+                title: 'James Baldwin',
+                url: './images/jamesbaldwin.jpeg',
+                correct: false
+            },
+            c: {
+                title: 'Maya Angelou',
+                url: './images/mayaangelou.png',
+                correct: false
+            },
+            d: {
+                title: 'Langston Hughes',
+                url: './images/langstonhughes.jpg',
+                correct: false
+            },
+        },
+    },
+    {
+        question: 'Which of the following books was penned when its author was only 16 years old? (The book was actually published when she was 18 years old.)',
+        answers: {
+            a: {
+                title: 'Normal People by Sally Rooney',
+                url: './images/normalpeople.jpg',
+                correct: false
+            },
+            b: {
+                title: 'Sisterhood of the Traveling Pants by Ann Brashares',
+                url: './images/sisterhoodofthetravelingpants.jpg',
+                correct: false
+            },
+            c: {
+                title: 'The Outsiders by SE Hinton',
+                url: './images/theoutsiders.jpg',
+                correct: true
+            },
+            d: {
+                title: 'The Awakening by Kate Chopin',
+                url: './images/theawakening.jpeg',
+                correct: false
+                },
+            },
+        
+        },
+    {
+        question: 'What was 2018’s highest selling book?',
+        a: {
+            title: 'Becoming by Michelle Obama',
+            url: './images/becoming.jpg',
+            correct: true
+        },
+        b: {
+            title: 'A Higher Loyalty by James Comey',
+            url: './images/higherloyalty.jpg',
+            correct: false
+        },
+        c: {
+            title: 'Fear: Trump in the White House',
+            url: './images/fear.jpg',
+            correct: false
+        },
+        d: {
+            title: 'The Mueller Report',
+            url: './images/muellerreport.jpg',
+            correct: false
+        },
+    },
+    {
+        question: 'Which of the following books is the most commonly shoplifted?',
+        a: {
+            title: 'Steal This Book by Abbie Hoffman',
+            url: './images/stealthisbook.jpg',
+            correct: false
+        },
+        b: {
+            title: 'The Bible',
+            url: './images/bible.jpg',
+            correct: true
+        },
+        c: {
+            title: 'The Catcher in the Rye by JD Salinger',
+            url: './images/catcherintherye.jpg',
+            correct: false
+        },
+        d: {
+            title: 'The Communist Manifesto by Karl Marx & Frederick Engels',
+            url: './images/communist manifesto.jpg',
+            correct: false
+        },
+    },
+    {
+        question: 'Which of the following books was used as evidence against its author in a trial persecuting that author for homosexuality?',
+        a: {
+            title: 'Where the Wild Things Are by Maurice Sendak',
+            url: './images/wherethewildthingsare.jpg',
+            correct: false
+        },
+        b: {
+            title: 'The Picture of Dorian Gray by Truman Capote',
+            url: './images/pictureofdoriangray.jpg',
+            correct: true
+        },
+        c: {
+            title: 'In Cold Blood by Truman Capote',
+            url: './images/incoldblood.jpg',
+            correct: false
+        },
+        d: {
+            
+        }
+    }
+
     }
 ]
 
@@ -110,6 +230,17 @@ function checkIfCorrect(e) {
     c.removeEventListener("click", checkIfCorrect);
     d.removeEventListener("click", checkIfCorrect);
     console.log(e.target.className);
+
+    let arr = ['a', 'b', 'c', 'd']
+
+    for (let i = 0; i < arr.length; i++) {
+        if (triviaQuestions.answers.arr[i].correct === 'true') {
+            style.border = "green";
+        } else {
+            style.border = "red";
+        }
+    }
+
     if (e.target.dataset.check === 'true') {
         tally.push(count);
     } else {
