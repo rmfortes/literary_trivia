@@ -6,31 +6,58 @@ body {
     height: 100vh;
     max-height: 100%;
     background-color:  #F7F4EF;
+    width: 100vh;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 h1 {
-    color:  #392420;
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
+    color: #F15851;
+    font-size: 50px;
+    margin-bottom: 0px;
 }
 
 h3 {
-    color: #392420;
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
+    color: #56C7F5;
+    margin-top: 0px;
+}
+
+h1, h3 {
+    text-align: left;
+    font-family: 'futura', sans-serif;
 }
 
 nav {
-    border: solid red;
+    width: 100vh;
+    max-width: 100%;
+    position: fixed;
+}
+
+.home {
+    font-family: 'futura', sans-serif;
+    font-size: 16px;
 }
 
 .board {
-    background-color: #F7F4EF;
-    text-align: center;
-    height: 700px;
-    width: 700px;
-    display: auto;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    height: 600px;
+    width: 900px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.flex {
+    display: flex;
+    align-items: space-around;
+    justify-content: center;
+    align-items: center;
 }
 
 .question {
@@ -39,8 +66,16 @@ nav {
 }
 
 .a, .b, .c, .d {
-    display: flex;
-    flex-direction: row;
     height: 300px;
+    margin: 10px;
 }
 
+.a {
+    margin-left: 0px;
+}
+
+.next {
+    font-family: 'futura', sans-serif;
+    font-size: 16px;
+    margin-top: 10px;
+}
