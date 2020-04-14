@@ -55,18 +55,13 @@ nav {
 }
 
 .board {
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     
     height: 600px;
     width: 900px;
-
-    position: absolute;
-    top: 45%;
-    left: 35%;
-    right: 35%;
-    transform: translate(-50%, -50%);
 }
 
 .flex {
@@ -105,7 +100,7 @@ nav {
     background-color: #E7E5DE;
 }
 
-@media screen and (max-width: 250px) {
+/* @media screen and (max-width: 250px) {
     .nav {
         display: flex;
     }
@@ -117,4 +112,4 @@ nav {
         position: fixed;
         margin-top: 25%;
     }
-  }
+  } */

@@ -318,6 +318,8 @@ function finish() { //invokes end of game, prints score.
 }
 
 function next(e) { //prints out every question & option
+    console.dir(e);
+    
     nextButton.removeEventListener("click", next);
 
     e.preventDefault;
