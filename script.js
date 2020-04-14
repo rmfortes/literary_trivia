@@ -297,6 +297,19 @@ let bonus = document.querySelector(".bonus");
 let count = 0; //keeps track of what question to display.
 let tally = []; //keeps track of user score.
 
+//button functionalities 
+homeButton.addEventListener("click", beginGame);
+nextButton.addEventListener("click", next);
+
+
+
+function beginGame (e) {
+    e.preventDefault;
+    count=0;
+    tally = [];
+    next(e);
+}
+
 function finish() { //invokes end of game, prints score. 
     bq = triviaQuestions[10].answers.bonusTrivia;
     if (count == 10) {
@@ -304,23 +317,34 @@ function finish() { //invokes end of game, prints score.
         b.style.display = "none";
         c.style.display = "none";
         d.style.display = "none";
+        nextButton.innerHTML = "Restart";
+        nextButton.addEventListener("click", beginGame)
         if (tally.length >= 8) {
             console.log('hi');
             bonus.innerHTML = `Your score is ${tally.length}/10. Good work! ${bq}`
-        } else if (5 > tally.length < 7) {
+        } else if (5 <= tally.length <= 7) {
             console.log('hi');
             bonus.innerHTML = `Your score is ${tally.length}/10. Not bad! ${bq}`
         } else if (tally.length < 5) {
             console.log('hi');
             bonus.innerHTML = `Your score is ${tally.length}/10. Not too hot, but the world is yours for the reading. ${bq}`
         }
+    
     }
 }
 
+
 function next(e) { //prints out every question & option
     console.dir(e);
-    
+
+    nextButton.innerHTML = "Next";
+
     nextButton.removeEventListener("click", next);
+
+    a.style.display = "block";
+    b.style.display = "block";
+    c.style.display = "block";
+    d.style.display = "block";
 
     e.preventDefault;
     console.log('next question');
@@ -347,7 +371,8 @@ function next(e) { //prints out every question & option
     c.addEventListener("click", checkIfCorrect);
     d.addEventListener("click", checkIfCorrect);
 
-    finish();
+    finish ()
+        
 }
 
 // let images = document.getElementsByTagName("img");
@@ -389,16 +414,3 @@ function checkIfCorrect(e) {
         console.log('finished');
     }
 }
-
-function goHome(e) {
-    e.preventDefault;
-    count=0;
-}
-
-//button functionalities 
-homeButton.addEventListener("click", goHome);
-nextButton.addEventListener("click", next);
-
-
-
-
