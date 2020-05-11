@@ -2,11 +2,6 @@
 
 Lit Trivia is a ten-question self-scoring trivia game that tests user's knowledge of literary, publishing, and bookselling history. 
 
-# Brief example 
-
-Rendered in the browser, Lit Trivia looks like this: 
-![Lit Trivia]('./images/images/littrivia_screenshot.png')
-
 # List of features
 
 This project is pretty close to its original rendering: a ten-question, self-scoring game with clean, simple design; photos for options; and links to enable users to tap into a greater literary community. 
