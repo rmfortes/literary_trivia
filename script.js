@@ -67,10 +67,7 @@ function next(e) {
 
   nextButton.removeEventListener("click", next);
 
-  a.style.display = "block";
-  b.style.display = "block";
-  c.style.display = "block";
-  d.style.display = "block";
+  choices.forEach(choice => choice.style.display ="block");
 
   e.preventDefault;
   console.log("next question");
@@ -101,7 +98,6 @@ function next(e) {
 }
 
 function checkIfCorrect(e) {
-  console.log(triviaQuestions[count].answers.bonusTrivia)
   e.preventDefault;
   nextButton.addEventListener("click", next);
   a.removeEventListener("click", checkIfCorrect);
