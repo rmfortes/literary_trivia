@@ -43,7 +43,9 @@ function finish() {
   //invokes end of game, prints score.
   bq = triviaQuestions[10].answers.bonusTrivia;
   if (count == 10) {
+
     choices.forEach(choice => choice.style.display ="none");
+    
     nextButton.innerHTML = "Restart";
     nextButton.addEventListener("click", beginGame);
     if (tally.length >= 8) {
@@ -68,13 +70,6 @@ function next(e) {
   e.preventDefault;
   bonus.innerHTML = "";
   questionContainer.innerHTML = triviaQuestions[count].question;
-
-  // choices.forEach(choice => {
-  //   console.log(triviaQuestions[count].answers.choice.url)
-  //   choices.setAttribute("src", triviaQuestions[count].answers.choice.url);
-    // choice.setAttribute("data-check", triviaQuestions[count].answers.choice.correct);
-    // choice.alt = triviaQuestions[count].answers.choice.title
-  // });
 
 
   a.setAttribute("src", triviaQuestions[count].answers.a.url);
